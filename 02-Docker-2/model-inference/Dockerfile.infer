@@ -7,7 +7,6 @@ COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt \
     && rm -rf /root/.cache/pip
 
-WORKDIR /workspace
-COPY train.py check_train.py /workspace/
+COPY infer.py /workspace/
 
-CMD ["python", "train.py"]
+CMD ["python", "infer.py"]
